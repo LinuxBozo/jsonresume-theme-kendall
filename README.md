@@ -1,6 +1,6 @@
-#jsonresume-theme-bootstrap-icons
+#jsonresume-theme-kendall
 
-A fork of the [uber-classy](https://github.com/JaredCubilla/jsonresume-theme-classy) theme for JSONResume, to rework it into Bootstrap and add some personal flair, particularly around patent-type publications.
+A theme for JSONResume, that relies on Bootstrap and FontAwesome, added with some personal flair.
 
 ## Usage
 
@@ -50,27 +50,7 @@ __The theme development can now begin.__
 
 ## Tips
 
-The publications section understands patents a little better now. Added to the official specification are:
-
-Parameter       | Required? | Type   | Description
-----------------|-----------|--------|--------------
- `patentNumber` | optional  | string | Patent number, to be formatted
- `patentStatus` | optional  | string | Issued or Pending
-
-```json
- "publications": [
-    {
-      "name": "Secure communication system for mobile devices",
-      "patentNumber": "US 8,392,699",
-      "summary": "A system for improving PKI performance and reliability by re-imagining the standard protocols into a disadvantaged and unreliable network architecture. This is a core technology of SAIFE®.",
-      "status": "Issued",
-      "releaseDate": "2013-03-05",
-      "website": "http://www.google.com/patents/US8392699"
-    }
- ]
-```
-
-As of now, the "Classy" theme supports the following profiles in the bio.profiles array.
+As of now, the theme supports the following profiles in the bio.profiles array.
 
 * Facebook
 * Twitter
@@ -91,9 +71,3 @@ If you want to keep your resume mobile-friendly, please limit the number of prof
 Every section is optional also. If per se, you do not include the publications array in your resume.json, no publications section will appear.
 
 If you find any other problems with this theme in specified, do feel free to leave an issue. Thanks.
-
-## Colophon
-
-Thanks to [Jared Cubilla](https://github.com/JaredCubilla) for the basis of this theme.
-
-Thanks to the wonderful [Font Awesome](https://fontawesome.io) for their free-to-use icon font, and a big thank you to the JSONResume theme for their wonderful idea and helping me with a few issues on my part.
