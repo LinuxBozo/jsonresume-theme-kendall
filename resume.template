@@ -32,7 +32,7 @@
           <!-- ABOUT ME -->
           <div class="box">
             <h2><i class="fa fa-user ico"></i> About</h2>
-            <p>{{basics.summary}}</p>
+            <p>{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
           {{#educationBool}}
@@ -56,7 +56,7 @@
           					<div>Courses</div>
           					<ul class="list-group">
           						{{#courses}}
-          						<li class="list-group-item">{{.}}</li>
+          						<li class="list-group-item">{{{.}}}</li>
           						{{/courses}}
           					</ul>
           			  {{/educationCourses}}
@@ -84,15 +84,15 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-11 pull-right">
+                  <div class="col-xs-offset-1 col-xs-11">
                     <div class="profession">{{position}}</div>
                     <div class="description">
-                      {{summary}}
+                      {{{summary}}}
                       {{#boolHighlights}}
                       <div class="highlights">Highlights</div>
                       <ul class="list-group">
           							{{#highlights}}
-          							<li class="list-group-item">{{.}}</li>
+          							<li class="list-group-item">{{{.}}}</li>
           							{{/highlights}}
           						</ul>
                       {{/boolHighlights}}
@@ -114,7 +114,7 @@
                 <div class="description pull-right">
                   <h3>{{awarder}}</h3>
                   <p><i class="fa fa-trophy ico"></i> {{title}}</p>
-                  <p>{{summary}}</p>
+                  <p>{{{summary}}}</p>
                 </div>
               </li>
               {{/awards}}
@@ -142,12 +142,12 @@
                   <div class="col-xs-11 pull-right">
                     <div class="profession">{{position}}</div>
                     <div class="description">
-                      {{summary}}
+                      {{{summary}}}
                       {{#boolHighlights}}
                       <div class="highlights">Highlights</div>
                       <ul class="list-group">
           							{{#highlights}}
-          							<li class="list-group-item">{{.}}</li>
+          							<li class="list-group-item">{{{.}}}</li>
           							{{/highlights}}
           						</ul>
                       {{/boolHighlights}}
@@ -163,7 +163,7 @@
     				<h2><i class= "fa fa-check-square ico"></i> References</h2>
     				{{#references}}
     				<blockquote>
-    					<div>{{reference}}</div>
+    					<div>{{{reference}}}</div>
     					<footer>
     						<a href="{{website}}" target= "_blank">{{name}}</a>
     					</footer>
@@ -176,11 +176,13 @@
           <!-- CONTACT -->
           <div class="box clearfix">
             <h2><i class="fa fa-bullseye ico"></i> Contact</h2>
+            {{#basics.location}}
       			<div class="contact-item">
       				<div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
               <div class="title pull-right">{{basics.location.address}}</div>
               <div class="description pull-right">{{basics.location.city}}, {{basics.location.postalCode}}</div>
       			</div>
+            {{/basics.location}}
             {{#basics.phone}}
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
@@ -221,7 +223,7 @@
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
   							{{#keywords}}
-  							<span class= "skill badge">{{.}}</span>
+  							<span class= "skill badge">{{{.}}}</span>
   							{{/keywords}}
   						</div>
             </div>
@@ -248,7 +250,7 @@
                 </div>
                 {{/website}}
                 {{#summary}}
-                <p>{{summary}}</p>
+                <p>{{{summary}}}</p>
                 {{/summary}}
               </div>
             </div>
@@ -279,7 +281,7 @@
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
   							{{#keywords}}
-  							<span class= "interest badge">{{.}}</span>
+  							<span class= "interest badge">{{{.}}}</span>
   							{{/keywords}}
   						</div>
             </div>
