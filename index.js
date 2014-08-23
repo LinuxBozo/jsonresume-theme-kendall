@@ -94,7 +94,7 @@ function render(resumeObject) {
 		}
 	});
 
-	if (resumeObject.work) {
+	if (resumeObject.work && resumeObject.work.length) {
 		resumeObject.workBool = true;
 		_.each(resumeObject.work, function(w){
 			if (w.startDate) {
@@ -118,7 +118,7 @@ function render(resumeObject) {
 		});
 	}
 
-	if (resumeObject.volunteer) {
+	if (resumeObject.volunteer && resumeObject.volunteer.length) {
 		resumeObject.volunteerBool = true;
 		_.each(resumeObject.volunteer, function(w){
 			if (w.startDate) {
@@ -142,7 +142,7 @@ function render(resumeObject) {
 		});
 	}
 
-	if (resumeObject.education) {
+	if (resumeObject.education && resumeObject.education.length) {
 		if (resumeObject.education[0].institution) {
 			resumeObject.educationBool = true;
 			_.each(resumeObject.education, function(e){
@@ -179,7 +179,7 @@ function render(resumeObject) {
 		}
 	}
 
-	if (resumeObject.awards) {
+	if (resumeObject.awards && resumeObject.awards.length) {
 		if (resumeObject.awards[0].title) {
 			resumeObject.awardsBool = true;
 			_.each(resumeObject.awards, function(a){
@@ -190,7 +190,7 @@ function render(resumeObject) {
 		}
 	}
 
-	if (resumeObject.publications) {
+	if (resumeObject.publications && resumeObject.publications.length) {
 		if (resumeObject.publications[0].name) {
 			resumeObject.publicationsBool = true;
 			_.each(resumeObject.publications, function(a){
@@ -201,25 +201,25 @@ function render(resumeObject) {
 		}
 	}
 
-	if (resumeObject.skills) {
+	if (resumeObject.skills && resumeObject.skills.length) {
 		if (resumeObject.skills[0].name) {
 			resumeObject.skillsBool = true;
 		}
 	}
 
-	if (resumeObject.interests) {
+	if (resumeObject.interests && resumeObject.interests.length) {
 		if (resumeObject.interests[0].name) {
 			resumeObject.interestsBool = true;
 		}
 	}
 
-	if (resumeObject.languages) {
+	if (resumeObject.languages && resumeObject.languages.length) {
 		if (resumeObject.languages[0].language) {
 			resumeObject.languagesBool = true;
 		}
 	}
 
-	if (resumeObject.references) {
+	if (resumeObject.references && resumeObject.references.length) {
 		if (resumeObject.references[0].name) {
 			resumeObject.referencesBool = true;
 		}
