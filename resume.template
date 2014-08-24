@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-ember-extension="1">
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -8,10 +8,14 @@
     <title>{{basics.name}}</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>{{{css}}}</style>
-    <style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style>
+    <style type="text/css">
+    {{{css}}}
+    </style>
+    <style type="text/css" media="print">
+    {{{printcss}}}
+    </style>
   </head>
-  <body data-pinterest-extension-installed="cr1.3.4" style="zoom: 1;">
+  <body>
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
@@ -53,13 +57,13 @@
                   </p>
                   {{/gpa}}
                   {{#educationCourses}}
-          					<div>Courses</div>
-          					<ul class="list-group">
-          						{{#courses}}
-          						<li class="list-group-item">{{{.}}}</li>
-          						{{/courses}}
-          					</ul>
-          			  {{/educationCourses}}
+                    <div>Courses</div>
+                    <ul class="list-group">
+                      {{#courses}}
+                      <li class="list-group-item">{{{.}}}</li>
+                      {{/courses}}
+                    </ul>
+                  {{/educationCourses}}
                 </div>
               </li>
               {{/education}}
@@ -91,10 +95,10 @@
                       {{#boolHighlights}}
                       <div class="highlights">Highlights</div>
                       <ul class="list-group">
-          							{{#highlights}}
-          							<li class="list-group-item">{{{.}}}</li>
-          							{{/highlights}}
-          						</ul>
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
                       {{/boolHighlights}}
                     </div>
                   </div>
@@ -146,10 +150,10 @@
                       {{#boolHighlights}}
                       <div class="highlights">Highlights</div>
                       <ul class="list-group">
-          							{{#highlights}}
-          							<li class="list-group-item">{{{.}}}</li>
-          							{{/highlights}}
-          						</ul>
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
                       {{/boolHighlights}}
                     </div>
                   </div>
@@ -158,30 +162,17 @@
             {{/volunteer}}
           </div>
           {{/volunteerBool}}
-      		{{#referencesBool}}
-      		<div class="box">
-    				<h2><i class= "fa fa-check-square ico"></i> References</h2>
-    				{{#references}}
-    				<blockquote>
-    					<div>{{{reference}}}</div>
-    					<footer>
-    						<a href="{{website}}" target= "_blank">{{name}}</a>
-    					</footer>
-    				</blockquote><br>
-    				{{/references}}
-      		</div>
-      		{{/referencesBool}}
         </div>
         <div class="col-xs-12 col-sm-5">
           <!-- CONTACT -->
           <div class="box clearfix">
             <h2><i class="fa fa-bullseye ico"></i> Contact</h2>
             {{#basics.location}}
-      			<div class="contact-item">
-      				<div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
               <div class="title pull-right">{{basics.location.address}}</div>
               <div class="description pull-right">{{basics.location.city}}, {{basics.location.postalCode}}</div>
-      			</div>
+            </div>
             {{/basics.location}}
             {{#basics.phone}}
             <div class="contact-item">
@@ -201,13 +192,13 @@
               <div class="title only pull-right"><a href="{{basics.website}}" target="_blank">{{basics.website}}</a></div>
             </div>
             {{/basics.website}}
-      			{{#basics.profiles}}
-      			<div class="contact-item">
-      				<div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
+            {{#basics.profiles}}
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
               <div class="title pull-right">{{network}}</div>
               <div class="description pull-right"><a href="{{url}}" target="_blank">{{username}}</a></div>
-      			</div>
-      			{{/basics.profiles}}
+            </div>
+            {{/basics.profiles}}
           </div>
           {{#skillsBool}}
           <!-- SKILLS -->
@@ -215,17 +206,15 @@
             <h2><i class="fa fa-tasks ico"></i> Skills</h2>
             {{#skills}}
             <div class="skills clearfix">
-  						<div class="item-skills">
-  							<p>
-  								{{name}}
-  								{{#level}}<small>{{level}}</small>{{/level}}
-  							</p>
+              <div class="item-skills">
+                  {{name}}
+                  {{#level}}<small>{{level}}</small>{{/level}}
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
-  							{{#keywords}}
-  							<span class= "skill badge">{{{.}}}</span>
-  							{{/keywords}}
-  						</div>
+                {{#keywords}}
+                <span class= "skill badge">{{{.}}}</span>
+                {{/keywords}}
+              </div>
             </div>
             {{/skills}}
           </div>
@@ -263,7 +252,7 @@
             <h2><i class="fa fa-language ico"></i> Languages</h2>
             <ul class="list-group">
               {{#languages}}
-              <li class=" list-group-item">{{language}}<span class="label skill pull-right">{{fluency}}</span></li>
+              <li class=" list-group-item">{{language}}<span class="skill badge pull-right">{{fluency}}</span></li>
               {{/languages}}
             </ul>
           </div>
@@ -274,27 +263,38 @@
             <h2><i class="fa fa-heart ico"></i> Interests</h2>
             {{#interests}}
             <div class="interests clearfix">
-  						<div class="item-interests">
-  							<p>
-  								{{name}}
-  							</p>
+              <div class="item-interests">
+                  {{name}}
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
-  							{{#keywords}}
-  							<span class= "interest badge">{{{.}}}</span>
-  							{{/keywords}}
-  						</div>
+                {{#keywords}}
+                <span class= "interest badge">{{{.}}}</span>
+                {{/keywords}}
+              </div>
             </div>
             {{/interests}}
           </div>
           {{/interestsBool}}
+          {{#referencesBool}}
+          <div class="box">
+            <h2><i class= "fa fa-check-square ico"></i> References</h2>
+            {{#references}}
+            <blockquote>
+              <div>{{{reference}}}</div>
+              <footer>
+                <a href="{{website}}" target= "_blank">{{name}}</a>
+              </footer>
+            </blockquote><br>
+            {{/references}}
+          </div>
+          {{/referencesBool}}
         </div>
       </div>
     </div>
     <!-- JQUERY -->
-  	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- BOOTSTRAP -->
-  	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
   </body>
 </html>
