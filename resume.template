@@ -173,7 +173,7 @@
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
               <div class="title pull-right">{{basics.location.address}}</div>
-              <div class="description pull-right">{{basics.location.city}}, {{basics.location.postalCode}}</div>
+              <div class="description pull-right">{{basics.location.city}}{{#basics.location.postalCode}}, {{basics.location.postalCode}}{{/basics.location.postalCode}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
             </div>
             {{/basics.location}}
             {{#basics.phone}}
