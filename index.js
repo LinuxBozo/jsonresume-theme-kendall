@@ -84,6 +84,11 @@ function render(resumeObject) {
             case "Behance":
                 p.iconClass = "fa fa-behance-square";
                 break;
+            case "dribbble":
+            case "Dribbble":
+            case "dribble":
+                p.iconClass = "fa fa-dribbble";
+                break;
             case "codepen":
             case "Codepen":
             case "codePen":
