@@ -50,7 +50,7 @@ __The theme development can now begin.__
 
 ## Tips
 
-As of now, the theme supports the following profiles in the bio.profiles array.
+As of now, the theme supports the following profiles in the basics.profiles array.
 
 * Facebook
 * Twitter
@@ -63,8 +63,11 @@ As of now, the theme supports the following profiles in the bio.profiles array.
 * Flickr
 * Github
 * Pinterest
+* Steam
+* Soundcloud
+* Reddit
 
-Every single one of these is optional, and every field in the bio.profiles array **must** be entered lowercase, without spaces. If you want support for more social networks, feel free to leave an issue. Thanks.
+Every single one of these is optional, and every field in the basics.profiles array **must** be entered lowercase, without spaces. If you want support for more social networks, feel free to leave an issue. Thanks.
 
 If you want to keep your resume mobile-friendly, please limit the number of profiles to 10, please. No one should have over 10 profiles on their resume anyway.
 
