@@ -40,85 +40,67 @@ function render(resumeObject) {
 
     _.each(resumeObject.basics.profiles, function(p){
         switch(p.network.toLowerCase()) {
-            case "Facebook":
             case "facebook":
                 p.iconClass = "fa fa-facebook-square";
                 break;
-            case "Github":
             case "github":
                 p.iconClass = "fa fa-github-square";
                 break;
-            case "Twitter":
             case "twitter":
                 p.iconClass = "fa fa-twitter-square";
                 break;
             case "googlePlus":
-            case "GooglePlus":
             case: "google-plus":
             case "googleplus":
                 p.iconClass = "fa fa-google-plus-square";
                 break;
             case "youtube":
-            case "Youtube":
             case "YouTube":
                 p.iconClass = "fa fa-youtube-square";
                 break;
             case "vimeo":
-            case: "Vimeo":
                 p.iconClass = "fa fa-vimeo-square";
                 break;
             case "linkedin":
-            case "Linkedin":
                 p.iconClass = "fa fa-linkedin-square";
                 break;
             case "pinterest":
-            case "Pinterest":
                 p.iconClass = "fa fa-pinterest-square";
                 break;
             case "flickr":
             case "flicker":
-            case: "Flickr":
                 p.iconClass = "fa fa-flickr";
                 break;
             case "behance":
-            case "Behance":
                 p.iconClass = "fa fa-behance-square";
                 break;
             case "dribbble":
-            case "Dribbble":
             case "dribble":
                 p.iconClass = "fa fa-dribbble";
                 break;
             case "codepen":
-            case "Codepen":
             case "codePen":
                 p.iconClass = "fa fa-codepen";
                 break;
             case "soundcloud":
-            case "Soundcloud":
             case "soundCloud":
                 p.iconClass = "fa fa-soundcloud";
                 break;
             case "steam":
-            case "Steam":
                 p.iconClass = "fa fa-steam";
                 break;
             case "reddit":
-            case "Reddit":
                 p.iconClass = "fa fa-reddit";
                 break;
             case "tumblr":
-            case "Tumblr":
             case "tumbler":
                 p.iconClass = "fa fa-tumblr-square";
                 break;
             case "stack-overflow":
             case "stackOverflow":
-            case "StackOverflow":
                 p.iconClass = "fa fa-stack-overflow";
                 break;
             case "blog":
-            case "Blog":
             case "rss":
                 p.iconClass = "fa fa-rss-square";
                 break;
