@@ -1,5 +1,6 @@
 var fs = require('fs');
-var _ = require('lodash')
+var _ = require('lodash');
+var gravatar = require('gravatar');
 var Mustache = require('mustache');
 
 var d = new Date();
@@ -37,6 +38,16 @@ function getMonth(startDateStr) {
 function render(resumeObject) {
 
     resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
+    if(resumeObject.basics && resumeObject.basics.email) {
+        resumeObject.basics.gravatar = gravatar.url(resumeObject.basics.email, {
+                        s: '200',
+                        r: 'pg',
+                        d: 'mm'
+                    });
+    }
+    if (resumeObject.basics.picture || resumeObject.basics.gravatar) {
+        resumeObject.photo = resumeObject.basics.picture ? resumeObject.basics.picture : resumeObject.basics.gravatar;
+    }
 
     _.each(resumeObject.basics.profiles, function(p){
         switch(p.network.toLowerCase()) {
@@ -50,7 +61,7 @@ function render(resumeObject) {
                 p.iconClass = "fa fa-twitter-square";
                 break;
             case "googlePlus":
-            case: "google-plus":
+            case "google-plus":
             case "googleplus":
                 p.iconClass = "fa fa-google-plus-square";
                 break;

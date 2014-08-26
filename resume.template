@@ -21,10 +21,12 @@
         <div class="col-xs-12">
           <div id="photo-header" class="text-center">
             <!-- PHOTO (AVATAR) -->
+            {{#photo}}
             <div id="photo">
-              <img src="{{basics.picture}}" alt="avatar">
+              <img src="{{photo}}" alt="avatar">
             </div>
-            <div id="text-header">
+            {{/photo}}
+            <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
               <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
             </div>
           </div>
