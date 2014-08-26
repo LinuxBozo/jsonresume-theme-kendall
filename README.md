@@ -53,19 +53,22 @@ __The theme development can now begin.__
 As of now, the theme supports the following profiles in the basics.profiles array.
 
 * Facebook
+* Github
 * Twitter
 * Google Plus
-* Linkedin
 * YouTube
-* Behance
-* CodePen
 * Vimeo
-* Flickr
-* Github
+* Linkedin
 * Pinterest
-* Steam
+* Flickr
+* Behance
+* Dribbble
+* CodePen
 * Soundcloud
+* Steam
 * Reddit
+* Tumblr
+* Stack Overflow
 
 Every single one of these is optional, and every field in the basics.profiles array **must** be entered lowercase, without spaces. If you want support for more social networks, feel free to leave an issue. Thanks.
 
