@@ -251,6 +251,15 @@ blockquote {
   position: relative;
   font-size: .85em;
 }
+.skill-level {
+  background-color: #227c74;
+  border-radius: 4px;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: .75em;
+  position: absolute;
+  margin: 1px 10px;
+}
 
 #language-skills .skill{
   margin: 10px 0;
