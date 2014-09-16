@@ -111,6 +111,9 @@ function render(resumeObject) {
             case "stackOverflow":
                 p.iconClass = "fa fa-stack-overflow";
                 break;
+            case "bitbucket":
+                p.iconClass = "fa fa-bitbucket";
+                break;
             case "blog":
             case "rss":
                 p.iconClass = "fa fa-rss-square";
