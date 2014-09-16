@@ -198,7 +198,7 @@
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
               <div class="title pull-right">{{network}}</div>
-              <div class="description pull-right"><a href="{{url}}" target="_blank">{{username}}</a></div>
+              <div class="description pull-right"><a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
             </div>
             {{/basics.profiles}}
           </div>
