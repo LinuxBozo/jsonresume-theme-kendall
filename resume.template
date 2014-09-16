@@ -185,7 +185,7 @@
             {{#basics.email}}
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
-              <div class="title only pull-right">{{basics.email}}</div>
+              <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
             </div>
             {{/basics.email}}
             {{#basics.website}}
