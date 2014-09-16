@@ -28,19 +28,13 @@
             {{/photo}}
             <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
               <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+              <p>{{{basics.summary}}}</p>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-7">
-          {{#basics.summary}}
-          <!-- ABOUT ME -->
-          <div class="box">
-            <h2><i class="fa fa-user ico"></i> About</h2>
-            <p>{{{basics.summary}}}</p>
-          </div>
-          {{/basics.summary}}
           {{#educationBool}}
           <!-- EDUCATION -->
           <div class="box">
