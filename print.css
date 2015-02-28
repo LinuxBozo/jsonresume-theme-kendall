@@ -30,6 +30,10 @@ a[href]:after {
   margin-bottom: 5px;
 }
 
+#education {
+  margin: 0;
+  margin-bottom: -20px;
+}
 #awards:before,
 #education:before {
   background: none;
