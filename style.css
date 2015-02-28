@@ -82,6 +82,7 @@ blockquote {
 #awards,
 #education{
   margin-top: 20px;
+  margin-bottom: 0;
   position: relative;
   padding: 1em 0;
   list-style: none;
@@ -113,7 +114,7 @@ blockquote {
 }
 #awards .year,
 #education .year{
-  width: 10%;
+  width: 14%;
   background: #fff;
   padding: 10px;
   font-weight: 700;
@@ -121,7 +122,7 @@ blockquote {
 }
 #awards .description,
 #education .description{
-  width: 85%;
+  width: 83%;
   display: inline-block;
   background: #eee;
   margin-bottom: 10px;
@@ -184,8 +185,15 @@ blockquote {
   line-height: 1.5em;
 }
 .job .highlights{
-  padding: 10px 0;
+  padding: 5px 0;
   font-weight: bold;
+}
+.job .job-details {
+  padding-left: 5%;
+  width: 100%;
+}
+.publication {
+  margin-bottom: 0;
 }
 .publication .name{
   font-size: 1em;
@@ -265,25 +273,4 @@ blockquote {
   margin: 10px 0;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
-}
-
-@media (min-width: 500px) {
-  #education .description{
-    width: 85%;
-  }
-}
-@media (min-width: 768px) {
-  #education .description{
-    width: 85%;
-  }
-}
-@media (min-width: 992px) {
-  #education .description{
-    width: 87%;
-  }
-}
-@media (min-width: 1200px) {
-  #education .description{
-    width: 90%;
-  }
 }

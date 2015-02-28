@@ -41,37 +41,6 @@
             <p>{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
-          {{#educationBool}}
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2><i class="fa fa-university ico"></i> Education</h2>
-            <ul id="education" class="clearfix">
-              {{#education}}
-              <li>
-                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
-                <div class="description pull-right">
-                  <h3>{{institution}}</h3>
-                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
-                  <p>{{area}}</p>
-                  {{#gpa}}
-                  <p>
-                    GPA: {{gpa}}
-                  </p>
-                  {{/gpa}}
-                  {{#educationCourses}}
-                    <div>Courses</div>
-                    <ul class="list-group">
-                      {{#courses}}
-                      <li class="list-group-item">{{{.}}}</li>
-                      {{/courses}}
-                    </ul>
-                  {{/educationCourses}}
-                </div>
-              </li>
-              {{/education}}
-            </ul>
-          </div>
-          {{/educationBool}}
           {{#workBool}}
           <!-- WORK EXPERIENCE -->
           <div class="box">
@@ -90,7 +59,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-offset-1 col-xs-11">
+                  <div class="job-details col-xs-11">
                     <div class="profession">{{position}}</div>
                     <div class="description">
                       {{{summary}}}
@@ -202,6 +171,37 @@
             </div>
             {{/basics.profiles}}
           </div>
+          {{#educationBool}}
+          <!-- EDUCATION -->
+          <div class="box">
+            <h2><i class="fa fa-university ico"></i> Education</h2>
+            <ul id="education" class="clearfix">
+              {{#education}}
+              <li>
+                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
+                <div class="description pull-right">
+                  <h3>{{institution}}</h3>
+                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+                  <p>{{area}}</p>
+                  {{#gpa}}
+                  <p>
+                    GPA: {{gpa}}
+                  </p>
+                  {{/gpa}}
+                  {{#educationCourses}}
+                    <div>Courses</div>
+                    <ul class="list-group">
+                      {{#courses}}
+                      <li class="list-group-item">{{{.}}}</li>
+                      {{/courses}}
+                    </ul>
+                  {{/educationCourses}}
+                </div>
+              </li>
+              {{/education}}
+            </ul>
+          </div>
+          {{/educationBool}}
           {{#skillsBool}}
           <!-- SKILLS -->
           <div class="box">
