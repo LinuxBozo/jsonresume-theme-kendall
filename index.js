@@ -118,6 +118,8 @@ function render(resumeObject) {
             case "rss":
                 p.iconClass = "fa fa-rss-square";
                 break;
+            default:
+                p.iconClass = "fa fa-" + p.network.toLowerCase() + "-square";
         }
 
         if (p.url) {
