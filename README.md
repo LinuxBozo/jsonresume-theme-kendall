@@ -70,6 +70,7 @@ As of now, the theme supports the following profiles in the basics.profiles arra
 * Tumblr
 * Stack Overflow
 * Bitbucket
+* Gitlab
 
 Every single one of these is optional, and every field in the basics.profiles array **must** be entered lowercase, without spaces. If you want support for more social networks, feel free to leave an issue. Thanks.
 
