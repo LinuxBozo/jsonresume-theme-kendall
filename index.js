@@ -119,8 +119,7 @@ function render(resumeObject) {
                 p.iconClass = "fa fa-rss-square";
                 break;
             case "gitlab":
-            case "Gitlab":
-                p.iconClass = "fa fa-gitlab"
+                p.iconClass = "fa fa-gitlab";
                 break;
             default:
                 p.iconClass = "fa fa-" + p.network.toLowerCase() + "-square";
