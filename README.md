@@ -9,6 +9,7 @@ To first get started with this JSONResume theme, you'll need to have the JSONRes
 After this, you can get your resume.json ready by typing `resume init`. After hitting enter, your resume will be initialized and you can edit it and fill in the neccessary fields. Check out [the official resume-schema repository](https://github.com/jsonresume/resume-schema) for more information on filling these fields.
 
 When you are finished with your resume, you may test it by yet again opening the command line and typing `resume serve --theme kendall` to see how it looks with this theme. You can replace the word `kendall` with other theme names too.
+
 ### Install the command line
 
 We're going to use the official [resume-cli](https://github.com/jsonresume/resume-cli) to run our development server.
@@ -72,7 +73,7 @@ As of now, the theme supports the following profiles in the basics.profiles arra
 * Bitbucket
 * Gitlab
 
-Every single one of these is optional, and every field in the basics.profiles array **must** be entered lowercase, without spaces. If you want support for more social networks, feel free to leave an issue. Thanks.
+Every single one of these is optional, and every field in the basics.profiles array **must** be entered without spaces. This theme will try to use the matching `-square` version of the icon from FontAwesome if it doesn't already have support for one of your profiles. If you want support for more social networks, feel free to leave an issue, or even better, submit a pull request. Thanks.
 
 If you want to keep your resume mobile-friendly, please limit the number of profiles to 10, please. No one should have over 10 profiles on their resume anyway.
 
