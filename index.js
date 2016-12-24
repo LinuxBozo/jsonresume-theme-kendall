@@ -60,13 +60,11 @@ function render(resumeObject) {
             case "twitter":
                 p.iconClass = "fa fa-twitter-square";
                 break;
-            case "googlePlus":
             case "google-plus":
             case "googleplus":
                 p.iconClass = "fa fa-google-plus-square";
                 break;
             case "youtube":
-            case "YouTube":
                 p.iconClass = "fa fa-youtube-square";
                 break;
             case "vimeo":
@@ -90,15 +88,13 @@ function render(resumeObject) {
                 p.iconClass = "fa fa-dribbble";
                 break;
             case "codepen":
-            case "codePen":
                 p.iconClass = "fa fa-codepen";
                 break;
             case "soundcloud":
-            case "soundCloud":
                 p.iconClass = "fa fa-soundcloud";
                 break;
             case "steam":
-                p.iconClass = "fa fa-steam";
+                p.iconClass = "fa fa-steam-square";
                 break;
             case "reddit":
                 p.iconClass = "fa fa-reddit";
@@ -108,11 +104,11 @@ function render(resumeObject) {
                 p.iconClass = "fa fa-tumblr-square";
                 break;
             case "stack-overflow":
-            case "stackOverflow":
+            case "stackoverflow":
                 p.iconClass = "fa fa-stack-overflow";
                 break;
             case "bitbucket":
-                p.iconClass = "fa fa-bitbucket";
+                p.iconClass = "fa fa-bitbucket-square";
                 break;
             case "blog":
             case "rss":
