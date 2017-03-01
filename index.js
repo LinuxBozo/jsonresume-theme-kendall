@@ -51,37 +51,14 @@ function render(resumeObject) {
 
     _.each(resumeObject.basics.profiles, function(p){
         switch(p.network.toLowerCase()) {
-            case "facebook":
-                p.iconClass = "fa fa-facebook-square";
-                break;
-            case "github":
-                p.iconClass = "fa fa-github-square";
-                break;
-            case "twitter":
-                p.iconClass = "fa fa-twitter-square";
-                break;
+            // special cases
             case "google-plus":
             case "googleplus":
-                p.iconClass = "fa fa-google-plus-square";
-                break;
-            case "youtube":
-                p.iconClass = "fa fa-youtube-square";
-                break;
-            case "vimeo":
-                p.iconClass = "fa fa-vimeo-square";
-                break;
-            case "linkedin":
-                p.iconClass = "fa fa-linkedin-square";
-                break;
-            case "pinterest":
-                p.iconClass = "fa fa-pinterest-square";
+                p.iconClass = "fa fa-google-plus";
                 break;
             case "flickr":
             case "flicker":
                 p.iconClass = "fa fa-flickr";
-                break;
-            case "behance":
-                p.iconClass = "fa fa-behance-square";
                 break;
             case "dribbble":
             case "dribble":
@@ -93,32 +70,30 @@ function render(resumeObject) {
             case "soundcloud":
                 p.iconClass = "fa fa-soundcloud";
                 break;
-            case "steam":
-                p.iconClass = "fa fa-steam-square";
-                break;
             case "reddit":
                 p.iconClass = "fa fa-reddit";
                 break;
             case "tumblr":
             case "tumbler":
-                p.iconClass = "fa fa-tumblr-square";
+                p.iconClass = "fa fa-tumblr";
                 break;
             case "stack-overflow":
             case "stackoverflow":
                 p.iconClass = "fa fa-stack-overflow";
                 break;
-            case "bitbucket":
-                p.iconClass = "fa fa-bitbucket-square";
-                break;
             case "blog":
             case "rss":
-                p.iconClass = "fa fa-rss-square";
+                p.iconClass = "fa fa-rss";
                 break;
             case "gitlab":
                 p.iconClass = "fa fa-gitlab";
                 break;
+            case "keybase":
+                p.iconClass = "fa fa-key";
+                break;
             default:
-                p.iconClass = "fa fa-" + p.network.toLowerCase() + "-square";
+                // try to automatically select the icon based on the name
+                p.iconClass = "fa fa-" + p.network.toLowerCase();
         }
 
         if (p.url) {
