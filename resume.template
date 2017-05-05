@@ -78,6 +78,37 @@
             {{/work}}
           </div>
           {{/workBool}}
+          {{#educationBool}}
+          <!-- EDUCATION -->
+          <div class="box">
+            <h2><i class="fa fa-university ico"></i> Education</h2>
+            <ul id="education" class="clearfix">
+              {{#education}}
+              <li>
+                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
+                <div class="description pull-right">
+                  <h3>{{institution}}</h3>
+                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+                  <p>{{area}}</p>
+                  {{#gpa}}
+                  <p>
+                    GPA: {{gpa}}
+                  </p>
+                  {{/gpa}}
+                  {{#educationCourses}}
+                    <div>Courses</div>
+                    <ul class="list-group">
+                      {{#courses}}
+                      <li class="list-group-item">{{{.}}}</li>
+                      {{/courses}}
+                    </ul>
+                  {{/educationCourses}}
+                </div>
+              </li>
+              {{/education}}
+            </ul>
+          </div>
+          {{/educationBool}}
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
