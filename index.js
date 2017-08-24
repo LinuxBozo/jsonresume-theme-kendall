@@ -45,8 +45,8 @@ function render(resumeObject) {
                         d: 'mm'
                     });
     }
-    if (resumeObject.basics.picture || resumeObject.basics.gravatar) {
-        resumeObject.photo = resumeObject.basics.picture ? resumeObject.basics.picture : resumeObject.basics.gravatar;
+    if (resumeObject.basics.image || resumeObject.basics.gravatar) {
+        resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
     }
 
     _.each(resumeObject.basics.profiles, function(p){
