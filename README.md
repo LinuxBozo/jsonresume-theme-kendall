@@ -1,6 +1,6 @@
-#jsonresume-theme-kendall
+## Custom JSONResume theme based on kendall
 
-A theme for JSONResume, that relies on Bootstrap and FontAwesome, added with some personal flair.
+A theme for JSONResume, __translated to French__, that relies on Bootstrap and FontAwesome, added with some personal flair.
 
 ## Usage
 
