@@ -10,7 +10,7 @@
   "contributors": [{
     "name": "Eyap53",
     "url": "https://github.com/Eyap53"
-  }]
+  }],
   "license": "MIT",
   "dependencies": {
     "gravatar": "^1.0.6",
