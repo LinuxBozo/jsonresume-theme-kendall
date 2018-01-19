@@ -21,9 +21,7 @@ blockquote,
 .contact-item,
 .publication,
 .skills,
-.interests,
-.job-details,
-.job {
+.interests {
   page-break-inside: avoid;
 }
 
