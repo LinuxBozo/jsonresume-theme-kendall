@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resume of {{basics.name}}</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
     <style type="text/css">
     {{{css}}}
     </style>
@@ -37,24 +39,36 @@
           {{#basics.summary}}
           <!-- ABOUT ME -->
           <div class="box">
-            <h2><i class="fa fa-user ico"></i> About</h2>
+            <h2><i class="fas fa-user ico"></i> About</h2>
             <p>{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
           {{#workBool}}
           <!-- WORK EXPERIENCE -->
           <div class="box">
-            <h2><i class= "fa fa-suitcase ico"></i> Work Experience</h2>
+            <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
             {{#work}}
               <div class="job clearfix">
                 <div class="row">
                   <div class="details">
-                    <div class="where">{{company}}</div>
-                    {{#website}}
-                    <div class="address">
-                      <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
+                    <div class="where">
+                      {{name}}
+                      {{#location}}
+                      <div class="pull-right">
+                        {{location}}
+                      </div>
+                      {{/location}}
                     </div>
-                    {{/website}}
+                    {{#description}}
+                    <div class="description">
+                      {{description}}
+                    </div>
+                    {{/description}}
+                    {{#url}}
+                    <div class="address">
+                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+                    </div>
+                    {{/url}}
                     <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
                   </div>
                 </div>
@@ -81,14 +95,14 @@
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
-            <h2><i class="fa fa-certificate ico"></i> Awards</h2>
+            <h2><i class="fas fa-certificate ico"></i> Awards</h2>
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
                 <div class="year pull-left">{{month}} {{year}}</div>
                 <div class="description pull-right">
                   <h3>{{awarder}}</h3>
-                  <p><i class="fa fa-trophy ico"></i> {{title}}</p>
+                  <p><i class="fas fa-trophy ico"></i> {{title}}</p>
                   <p>{{{summary}}}</p>
                 </div>
               </li>
@@ -99,22 +113,22 @@
           {{#volunteerBool}}
           <!-- VOLUNTEER -->
           <div class="box">
-            <h2><i class= "fa fa-group ico"></i> Volunteer</h2>
+            <h2><i class= "fas fa-users ico"></i> Volunteer</h2>
             {{#volunteer}}
               <div class="job clearfix">
                 <div class="row">
                   <div class="details">
                     <div class="where">{{organization}}</div>
-                    {{#website}}
+                    {{#url}}
                     <div class="address">
-                      <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
+                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
                     </div>
-                    {{/website}}
+                    {{/url}}
                     <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-11 pull-right">
+                  <div class="job-details col-xs-11">
                     <div class="profession">{{position}}</div>
                     <div class="description">
                       {{{summary}}}
@@ -133,36 +147,49 @@
             {{/volunteer}}
           </div>
           {{/volunteerBool}}
+          {{#projectsBool}}
+          <!-- PROJECTS -->
+          <div class="box">
+            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
+            <ul class="list-group">
+              {{#projects}}
+              <li class="list-group-item">
+                <span style="font-weight:bold">{{name}}</span>: {{description}}
+              </li>
+              {{/projects}}
+            </ul>
+          </div>
+          {{/projectsBool}}
         </div>
         <div class="col-xs-12 col-sm-5">
           <!-- CONTACT -->
           <div class="box clearfix">
-            <h2><i class="fa fa-bullseye ico"></i> Contact</h2>
+            <h2><i class="fas fa-bullseye ico"></i> Contact</h2>
             {{#basics.location}}
             <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
+              <div class="icon pull-left text-center"><span class="fas fa-map-marker fa-fw"></span></div>
               {{#basics.location.address}}<div class="title pull-right">{{basics.location.address}}</div>{{/basics.location.address}}
               <div class="title {{^basics.location.address}}only {{/basics.location.address}} pull-right">{{basics.location.city}}{{#basics.location.region}}, {{basics.location.region}}{{/basics.location.region}}{{#basics.location.postalCode}} {{basics.location.postalCode}}{{/basics.location.postalCode}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
             </div>
             {{/basics.location}}
             {{#basics.phone}}
             <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
+              <div class="icon pull-left text-center"><span class="fas fa-phone fa-fw"></span></div>
               <div class="title only pull-right">{{basics.phone}}</div>
             </div>
             {{/basics.phone}}
             {{#basics.email}}
             <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+              <div class="icon pull-left text-center"><span class="fas fa-envelope fa-fw"></span></div>
               <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
             </div>
             {{/basics.email}}
-            {{#basics.website}}
+            {{#basics.url}}
             <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-              <div class="title only pull-right"><a href="{{basics.website}}" target="_blank">{{basics.website}}</a></div>
+              <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
+              <div class="title only pull-right"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
             </div>
-            {{/basics.website}}
+            {{/basics.url}}
             {{#basics.profiles}}
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
@@ -174,20 +201,26 @@
           {{#educationBool}}
           <!-- EDUCATION -->
           <div class="box">
-            <h2><i class="fa fa-university ico"></i> Education</h2>
+            <h2><i class="fas fa-university ico"></i> Education</h2>
             <ul id="education" class="clearfix">
               {{#education}}
               <li>
                 <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
                 <div class="description pull-right">
                   <h3>{{institution}}</h3>
-                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+                  <div class="where">{{organization}}</div>
+                  {{#url}}
+                  <div class="address">
+                    <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+                  </div>
+                  {{/url}}
+                  {{#studyType}}<p><i class= "fas fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
                   <p>{{area}}</p>
-                  {{#gpa}}
+                  {{#score}}
                   <p>
-                    GPA: {{gpa}}
+                    Grade: {{score}}
                   </p>
-                  {{/gpa}}
+                  {{/score}}
                   {{#educationCourses}}
                     <div>Courses</div>
                     <ul class="list-group">
@@ -205,7 +238,7 @@
           {{#skillsBool}}
           <!-- SKILLS -->
           <div class="box">
-            <h2><i class="fa fa-tasks ico"></i> Skills</h2>
+            <h2><i class="fas fa-tasks ico"></i> Skills</h2>
             {{#skills}}
             <div class="skills clearfix">
               <div class="item-skills">
@@ -224,7 +257,7 @@
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
-            <h2><i class="fa fa-book ico"></i> Publications</h2>
+            <h2><i class="fas fa-book ico"></i> Publications</h2>
             {{#publications}}
             <div class="publication panel panel-default">
               <div class="panel-heading">
@@ -232,14 +265,14 @@
               </div>
               <div class="panel-body">
                 {{#publisher}}
-                <div class="publisher"><i class= "fa fa-bookmark ico"></i> {{publisher}}</div>
+                <div class="publisher"><i class= "fas fa-bookmark ico"></i> {{publisher}}</div>
                 {{/publisher}}
                 <div class="year">{{day}} {{month}} {{year}}</div>
-                {{#website}}
+                {{#url}}
                 <div class="address">
-                  <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
+                  <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
                 </div>
-                {{/website}}
+                {{/url}}
                 {{#summary}}
                 <p>{{{summary}}}</p>
                 {{/summary}}
@@ -251,7 +284,7 @@
           {{#languagesBool}}
           <!-- LANGUAGES -->
           <div class="box">
-            <h2><i class="fa fa-language ico"></i> Languages</h2>
+            <h2><i class="fas fa-language ico"></i> Languages</h2>
             <ul class="list-group">
               {{#languages}}
               <li class=" list-group-item">{{language}}<span class="skill badge pull-right">{{fluency}}</span></li>
@@ -262,7 +295,7 @@
           {{#interestsBool}}
           <!-- HOBBIES -->
           <div class="box">
-            <h2><i class="fa fa-heart ico"></i> Interests</h2>
+            <h2><i class="fas fa-heart ico"></i> Interests</h2>
             {{#interests}}
             <div class="interests clearfix">
               <div class="item-interests">
@@ -279,12 +312,12 @@
           {{/interestsBool}}
           {{#referencesBool}}
           <div class="box">
-            <h2><i class= "fa fa-check-square ico"></i> References</h2>
+            <h2><i class= "fas fa-check-square ico"></i> References</h2>
             {{#references}}
             <blockquote>
               <div>{{{reference}}}</div>
               <footer>
-                <a href="{{website}}" target= "_blank">{{name}}</a>
+                <a href="{{url}}" target= "_blank">{{name}}</a>
               </footer>
             </blockquote><br>
             {{/references}}
