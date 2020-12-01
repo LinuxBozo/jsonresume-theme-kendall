@@ -52,7 +52,7 @@
                 <div class="row">
                   <div class="details">
                     <div class="where">
-                      {{name}}
+                      {{company}}
                       {{#location}}
                       <div class="pull-right">
                         {{location}}
