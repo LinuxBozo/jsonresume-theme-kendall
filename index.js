@@ -229,7 +229,7 @@ function render(resumeObject) {
     }
 
     if (resumeObject.languages && resumeObject.languages.length) {
-        if (resumeObject.languages[0].name) {
+        if (resumeObject.languages[0].language) {
             resumeObject.languagesBool = true;
         }
     }
