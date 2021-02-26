@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "gravatar": "^1.0.6",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "mustache": "^2.2.1"
   },
   "repository": {
