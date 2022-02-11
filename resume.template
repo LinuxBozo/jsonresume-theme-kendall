@@ -153,9 +153,34 @@
             <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
             <ul class="list-group">
               {{#projects}}
-              <li class="list-group-item">
-                <span style="font-weight:bold">{{name}}</span>: {{description}}
-              </li>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">{{name}}</div>
+                    {{#url}}
+                    <div class="address">
+                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+                    </div>
+                    {{/url}}
+                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="description">
+                      {{{description}}}
+                      {{#boolHighlights}}
+                      <div class="highlights">Highlights</div>
+                      <ul class="list-group">
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
+                      {{/boolHighlights}}
+                    </div>
+                  </div>
+                </div>
+              </div>
               {{/projects}}
             </ul>
           </div>
