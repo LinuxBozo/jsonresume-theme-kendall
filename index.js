@@ -35,6 +35,11 @@ function getMonth(startDateStr) {
     }
 }
 
+function getMimeType(url) {
+    global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    return require('check-url-type').get_type(url) ;
+}
+
 function render(resumeObject) {
 
     resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
@@ -47,6 +52,7 @@ function render(resumeObject) {
     }
     if (resumeObject.basics.image || resumeObject.basics.gravatar) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
+        resumeObject.photoType = getMimeType(resumeObject.photo) ;
     }
 
     _.each(resumeObject.basics.profiles, function(p){

@@ -16,6 +16,8 @@
     <style type="text/css" media="print">
     {{{printcss}}}
     </style>
+    <!-- FAVICON -->
+    <link rel="icon" href="{{photo}}" type="{{photoType}}">
   </head>
   <body>
     <div class="container">
