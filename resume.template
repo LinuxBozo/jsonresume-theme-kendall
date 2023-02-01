@@ -95,7 +95,7 @@
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
-            <h2><i class="fas fa-certificate ico"></i> Awards</h2>
+            <h2><i class="fas fa-awards ico"></i> Awards</h2>
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
@@ -110,6 +110,28 @@
             </ul>
           </div>
           {{/awardsBool}}
+          {{#certificatesBool}}
+          <!-- CERTIFICATES -->
+          <div class="box">
+            <h2><i class="fas fa-certificate ico"></i> Certificates</h2>
+            <ul id="certificates" class="clearfix">
+              {{#certificates}}
+              <li>
+                <div class="year pull-left">{{month}} {{year}}</div>
+                <div class="description pull-right">
+                  <h3>{{issuer}}</h3>
+                  <p><i class="fas fa-book-open ico"></i> {{name}}</p>
+                  {{#url}}
+                    <div class="address">
+                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+                    </div>
+                  {{/url}}
+                </div>
+              </li>
+              {{/certificates}}
+            </ul>
+          </div>
+          {{/certificatesBool}}
           {{#volunteerBool}}
           <!-- VOLUNTEER -->
           <div class="box">
