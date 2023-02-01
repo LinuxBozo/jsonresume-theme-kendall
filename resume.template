@@ -95,7 +95,7 @@
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
-            <h2><i class="fas fa-awards ico"></i> Awards</h2>
+            <h2><i class="fas fa-award ico"></i> Awards</h2>
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
