@@ -205,6 +205,17 @@ function render(resumeObject) {
         }
     }
 
+    if (resumeObject.certificates && resumeObject.certificates.length) {
+        if (resumeObject.certificates[0].name) {
+            resumeObject.certificatesBool = true;
+            _.each(resumeObject.certificates, function(a){
+                a.year = (a.date || "").substr(0,4);
+                a.day = (a.date || "").substr(8,2);
+                a.month = getMonth(a.date || "");
+            });
+        }
+    }
+
     if (resumeObject.publications && resumeObject.publications.length) {
         if (resumeObject.publications[0].name) {
             resumeObject.publicationsBool = true;

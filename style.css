@@ -80,7 +80,8 @@ blockquote {
 }
 
 #awards,
-#education{
+#certificates,
+#education {
   margin-top: 20px;
   margin-bottom: 0;
   position: relative;
@@ -88,6 +89,7 @@ blockquote {
   list-style: none;
 }
 #awards:before,
+#certificates:before,
 #education:before {
   width: 5px;
   height: 100%;
@@ -106,6 +108,7 @@ blockquote {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
 #awards li,
+#certificates li,
 #education li{
   width: 100%;
   z-index: 2;
@@ -113,6 +116,7 @@ blockquote {
   float: left;
 }
 #awards .year,
+#certificates .year,
 #education .year{
   width: 14%;
   background: #fff;
@@ -121,6 +125,7 @@ blockquote {
   display: inline-block;
 }
 #awards .description,
+#certificates .description,
 #education .description{
   width: 83%;
   display: inline-block;
@@ -132,6 +137,7 @@ blockquote {
   border-right: 1px solid #ccc;
 }
 #awards .description:after,
+#certificates .description:after,
 #education .description:after {
   content: '';
   position: absolute;
@@ -146,6 +152,7 @@ blockquote {
   pointer-events: none;
 }
 #awards .description h3,
+#certificates .description h3,
 #education .description h3{
   font-size: 1.2em;
   margin: 0;
@@ -153,6 +160,7 @@ blockquote {
   font-weight: 700;
 }
 #awards .description p,
+#certificates .description p,
 #education .description p{
   margin-top: 5px;
   padding: 0;
