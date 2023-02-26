@@ -54,46 +54,46 @@ function render(resumeObject) {
             // special cases
             case "google-plus":
             case "googleplus":
-                p.iconClass = "fab fa-google-plus";
+                p.iconClass = "fa fa-google-plus";
                 break;
             case "flickr":
             case "flicker":
-                p.iconClass = "fab fa-flickr";
+                p.iconClass = "fa fa-flickr";
                 break;
             case "dribbble":
             case "dribble":
-                p.iconClass = "fab fa-dribbble";
+                p.iconClass = "fa fa-dribbble";
                 break;
             case "codepen":
-                p.iconClass = "fab fa-codepen";
+                p.iconClass = "fa fa-codepen";
                 break;
             case "soundcloud":
-                p.iconClass = "fab fa-soundcloud";
+                p.iconClass = "fa fa-soundcloud";
                 break;
             case "reddit":
-                p.iconClass = "fab fa-reddit";
+                p.iconClass = "fa fa-reddit";
                 break;
             case "tumblr":
             case "tumbler":
-                p.iconClass = "fab fa-tumblr";
+                p.iconClass = "fa fa-tumblr";
                 break;
             case "stack-overflow":
             case "stackoverflow":
-                p.iconClass = "fab fa-stack-overflow";
+                p.iconClass = "fa fa-stack-overflow";
                 break;
             case "blog":
             case "rss":
-                p.iconClass = "fas fa-rss";
+                p.iconClass = "fa fa-rss";
                 break;
             case "gitlab":
-                p.iconClass = "fab fa-gitlab";
+                p.iconClass = "fa fa-gitlab";
                 break;
             case "keybase":
-                p.iconClass = "fas fa-key";
+                p.iconClass = "fa fa-key";
                 break;
             default:
                 // try to automatically select the icon based on the name
-                p.iconClass = "fab fa-" + p.network.toLowerCase();
+                p.iconClass = "fa fa-" + p.network.toLowerCase();
         }
 
         if (p.url) {
