@@ -71,7 +71,7 @@
                       <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
                     </div>
                     {{/url}}
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}, {{workExperience}}</div>
                   </div>
                 </div>
                 <div class="row">
@@ -126,7 +126,7 @@
                       <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
                     </div>
                     {{/url}}
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}, {{workExperience}}</div>
                   </div>
                 </div>
                 <div class="row">

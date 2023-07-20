@@ -2,6 +2,11 @@ var fs = require('fs');
 var _ = require('lodash');
 var gravatar = require('gravatar');
 var Mustache = require('mustache');
+var formatDuration = require('date-fns/formatDuration');
+var differenceInMonths = require('date-fns/differenceInMonths');
+var startOfMonth = require('date-fns/startOfMonth');
+var endOfMonth = require('date-fns/endOfMonth');
+var addDays = require('date-fns/addDays');
 
 var d = new Date();
 var curyear = d.getFullYear();
@@ -109,52 +114,50 @@ function render(resumeObject) {
         }
     });
 
-    if (resumeObject.work && resumeObject.work.length) {
-        resumeObject.workBool = true;
-        _.each(resumeObject.work, function(w){
-            if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
-
-            }
-            if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
-            } else {
-                w.endDateYear = 'Present'
-            }
-            if (w.highlights) {
-                if (w.highlights[0]) {
-                    if (w.highlights[0] != "") {
-                        w.boolHighlights = true;
-                    }
+    function handleWorkplace(w) {
+        const { startDate, endDate } = w;
+        if (startDate) {
+            w.startDateYear = (startDate || "").substr(0,4);
+            w.startDateMonth = getMonth(startDate || "");
+        }
+        if(endDate) {
+            w.endDateYear = (endDate || "").substr(0,4);
+            w.endDateMonth = getMonth(endDate || "");
+        } else {
+            w.endDateYear = 'Present'
+        }
+        if (w.highlights) {
+            if (w.highlights[0]) {
+                if (w.highlights[0] != "") {
+                    w.boolHighlights = true;
                 }
             }
-        });
+        }
+        if (startDate) {
+          const months = differenceInMonths(
+            addDays(endOfMonth(new Date(endDate)), 1),
+            startOfMonth(new Date(startDate))
+          );
+          w.workExperience = formatDuration(
+            {
+              years: Math.floor(months / 12),
+              months: months % 12,
+            },
+            {
+              format: ["years", "months"],
+            }
+          );
+        }
+    }
+
+    if (resumeObject.work && resumeObject.work.length) {
+        resumeObject.workBool = true;
+        _.each(resumeObject.work, handleWorkplace);
     }
 
     if (resumeObject.volunteer && resumeObject.volunteer.length) {
         resumeObject.volunteerBool = true;
-        _.each(resumeObject.volunteer, function(w){
-            if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
-
-            }
-            if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
-            } else {
-                w.endDateYear = 'Present'
-            }
-            if (w.highlights) {
-                if (w.highlights[0]) {
-                    if (w.highlights[0] != "") {
-                        w.boolHighlights = true;
-                    }
-                }
-            }
-        });
+        _.each(resumeObject.volunteer, handleWorkplace);
     }
 
     if (resumeObject.projects && resumeObject.projects.length) {
