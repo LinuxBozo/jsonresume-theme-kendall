@@ -14,6 +14,7 @@
     "gravatar": "^1.0.6",
     "lodash": "^4.17.20",
     "mustache": "^2.2.1",
+    "normalize.css": "^8.0.1",
     "xmlhttprequest": "^1.8.0"
   },
   "repository": {
