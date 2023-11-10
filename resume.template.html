@@ -94,77 +94,6 @@
             {{/work}}
           </div>
           {{/workBool}}
-          {{#awardsBool}}
-          <!-- AWARDS -->
-          <div class="box">
-            <h2><i class="fas fa-certificate ico"></i> Awards</h2>
-            <ul id="awards" class="clearfix">
-              {{#awards}}
-              <li>
-                <div class="year pull-left">{{month}} {{year}}</div>
-                <div class="description pull-right">
-                  <h3>{{awarder}}</h3>
-                  <p><i class="fas fa-trophy ico"></i> {{title}}</p>
-                  <p>{{{summary}}}</p>
-                </div>
-              </li>
-              {{/awards}}
-            </ul>
-          </div>
-          {{/awardsBool}}
-          {{#volunteerBool}}
-          <!-- VOLUNTEER -->
-          <div class="box">
-            <h2><i class= "fas fa-users ico"></i> Volunteer</h2>
-            {{#volunteer}}
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">{{organization}}</div>
-                    {{#url}}
-                    <div class="address">
-                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
-                    </div>
-                    {{/url}}
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}, {{workExperience}}</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
-                    <div class="description">
-                      {{{summary}}}
-                      {{#boolHighlights}}
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {{/volunteer}}
-          </div>
-          {{/volunteerBool}}
-          {{#projectsBool}}
-          <!-- PROJECTS -->
-          <div class="box">
-            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
-            <ul class="list-group">
-              {{#projects}}
-              <li class="list-group-item">
-                <span style="font-weight:bold">{{name}}</span>: {{description}}
-                <div class="address">
-                  <a href="{{url}}" target="_blank">{{url}}</a>
-                </div>
-              </li>
-              {{/projects}}
-            </ul>
-          </div>
-          {{/projectsBool}}
         </div>
         <div class="col-xs-12 col-sm-5">
           <!-- CONTACT -->
@@ -259,6 +188,77 @@
             {{/skills}}
           </div>
           {{/skillsBool}}
+          {{#projectsBool}}
+          <!-- PROJECTS -->
+          <div class="box">
+            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
+            <ul class="list-group">
+              {{#projects}}
+              <li class="list-group-item">
+                <span style="font-weight:bold">{{name}}</span>: {{description}}
+                <div class="address">
+                  <a href="{{url}}" target="_blank">{{url}}</a>
+                </div>
+              </li>
+              {{/projects}}
+            </ul>
+          </div>
+          {{/projectsBool}}
+          {{#volunteerBool}}
+          <!-- VOLUNTEER -->
+          <div class="box">
+            <h2><i class= "fas fa-users ico"></i> Volunteer</h2>
+            {{#volunteer}}
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">{{organization}}</div>
+                    {{#url}}
+                    <div class="address">
+                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+                    </div>
+                    {{/url}}
+                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}, {{workExperience}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">{{position}}</div>
+                    <div class="description">
+                      {{{summary}}}
+                      {{#boolHighlights}}
+                      <div class="highlights">Highlights</div>
+                      <ul class="list-group">
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
+                      {{/boolHighlights}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/volunteer}}
+          </div>
+          {{/volunteerBool}}
+          {{#awardsBool}}
+          <!-- AWARDS -->
+          <div class="box">
+            <h2><i class="fas fa-certificate ico"></i> Awards</h2>
+            <ul id="awards" class="clearfix">
+              {{#awards}}
+              <li>
+                <div class="year pull-left">{{month}} {{year}}</div>
+                <div class="description pull-right">
+                  <h3>{{awarder}}</h3>
+                  <p><i class="fas fa-trophy ico"></i> {{title}}</p>
+                  <p>{{{summary}}}</p>
+                </div>
+              </li>
+              {{/awards}}
+            </ul>
+          </div>
+          {{/awardsBool}}
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
