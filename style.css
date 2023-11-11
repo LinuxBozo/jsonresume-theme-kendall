@@ -165,6 +165,9 @@ blockquote {
 .job{
   margin-bottom: 15px;
 }
+.job:last-of-type { 
+  margin-bottom: 0;
+}
 .job .details {
   margin-left: 3%;
   width: 95%;
