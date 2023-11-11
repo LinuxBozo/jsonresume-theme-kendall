@@ -22,6 +22,10 @@ blockquote {
   background: #fff;
 }
 
+.list-group{
+  margin-bottom: 0;
+}
+
 #photo-header{
   margin-top: -75px;
 }
