@@ -45,6 +45,10 @@ function getMimeType(url) {
     return require('check-url-type').get_type(url) ;
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function render(resumeObject) {
 
     resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
@@ -126,13 +130,17 @@ function render(resumeObject) {
         } else {
             w.endDateYear = 'Present'
         }
-        if (w.highlights) {
-            if (w.highlights[0]) {
-                if (w.highlights[0] != "") {
-                    w.boolHighlights = true;
+        function handleStringArray(obj, fieldName) {
+            if (obj[fieldName]) {
+                if (obj[fieldName][0]) {
+                    if (obj[fieldName][0] != "") {
+                        obj['bool' + capitalizeFirstLetter(fieldName)] = true;
+                    }
                 }
             }
         }
+        handleStringArray(w, 'highlights');
+        handleStringArray(w, 'skills');
         if (startDate) {
           const months = differenceInMonths(
             addDays(endOfMonth(new Date(endDate)), 1),

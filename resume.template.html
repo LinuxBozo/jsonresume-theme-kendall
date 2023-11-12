@@ -80,6 +80,13 @@
                     <div class="profession">{{position}}</div>
                     <div class="description">
                       {{{summary}}}
+                      {{#boolSkills}}
+                      <div class="skills">
+                        {{#skills}}
+                        <span class="skill badge">{{{.}}}</span>
+                        {{/skills}}
+                      </div>
+                      {{/boolSkills}}
                       {{#boolHighlights}}
                       <div class="highlights">Highlights</div>
                       <ul class="list-group">

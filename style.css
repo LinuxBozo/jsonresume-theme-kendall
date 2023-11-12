@@ -191,8 +191,11 @@ blockquote {
 .job .description{
   line-height: 1.5em;
 }
+.job .skills {
+  margin: 10px 0;
+}
 .job .highlights{
-  padding: 5px 0;
+  margin: 5px 0;
   font-weight: bold;
 }
 .job .job-details {
