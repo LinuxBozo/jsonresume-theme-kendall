@@ -140,7 +140,7 @@ function render(resumeObject) {
             }
         }
         handleStringArray(w, 'highlights');
-        handleStringArray(w, 'skills');
+        handleStringArray(w, 'keywords');
         if (startDate) {
           const months = differenceInMonths(
             addDays(endOfMonth(new Date(endDate)), 1),
