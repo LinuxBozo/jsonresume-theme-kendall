@@ -51,7 +51,7 @@ function capitalizeFirstLetter(string) {
 
 function render(resumeObject) {
 
-    resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
+    resumeObject.basics.capitalName = _.upperCase(resumeObject.basics.name);
     if(resumeObject.basics && resumeObject.basics.email) {
         resumeObject.basics.gravatar = gravatar.url(resumeObject.basics.email, {
                         s: '200',
