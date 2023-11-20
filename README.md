@@ -1,4 +1,4 @@
-# jsonresume-theme-kendall
+# jsonresume-theme-kendall-bushmanov
 
 A theme for the [JSONResume](https://github.com/jsonresume/resume-schema) schema, that relies on Bootstrap and FontAwesome, added with some personal flair.
 
