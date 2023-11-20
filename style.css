@@ -124,6 +124,9 @@ blockquote {
   font-weight: 700;
   display: inline-block;
 }
+#awards .year{
+  width: 18%;
+}
 #awards .description,
 #education .description{
   width: 83%;
@@ -134,6 +137,9 @@ blockquote {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
+}
+#awards .description{
+  width: 80%;
 }
 #awards .description:after,
 #education .description:after {

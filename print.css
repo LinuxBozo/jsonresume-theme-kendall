@@ -56,6 +56,14 @@ blockquote,
 .job .details {
   border: 1px solid #eee;
 }
+
+#awards .year{
+  width: 25%;
+}
+#awards .description{
+  width: 75%;
+}
+
 .publication,
 .publication .panel-heading,
 .publication .name{
