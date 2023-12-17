@@ -290,3 +290,10 @@ blockquote {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
+
+.address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #337ab7;
+}

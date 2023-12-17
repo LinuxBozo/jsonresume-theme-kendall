@@ -98,3 +98,8 @@ blockquote,
   border-width: 4px;
   pointer-events: none;
  }
+
+.address {
+  white-space: normal;
+  word-break: break-all;
+}
