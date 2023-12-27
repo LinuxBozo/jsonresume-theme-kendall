@@ -65,6 +65,9 @@ function render(resumeObject) {
     }
 
     _.each(resumeObject.basics.profiles, function(p){
+        if(p.iconClass) {
+            return;
+        }
         switch(p.network.toLowerCase()) {
             // special cases
             case "google-plus":
