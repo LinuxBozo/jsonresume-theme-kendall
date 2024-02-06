@@ -163,6 +163,13 @@
                     Grade: {{score}}
                   </p>
                   {{/score}}
+                  {{#boolKeywords}}
+                    <div class="skills clearfix">
+                      {{#keywords}}
+                        <span class="skill badge">{{{.}}}</span>
+                      {{/keywords}}
+                    </div>
+                  {{/boolKeywords}}
                   {{#educationCourses}}
                     <div>Courses</div>
                     <ul class="list-group">

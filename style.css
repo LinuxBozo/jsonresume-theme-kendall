@@ -197,7 +197,8 @@ blockquote {
 .job .description{
   line-height: 1.5em;
 }
-.job .skills {
+.job .skills,
+#education .skills {
   margin: 10px 0;
 }
 .job .highlights{

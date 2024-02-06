@@ -181,6 +181,7 @@ function render(resumeObject) {
         if (resumeObject.education[0].institution) {
             resumeObject.educationBool = true;
             _.each(resumeObject.education, function(e){
+                handleWorkplace(e);
                 if( !e.area || !e.studyType ){
                   e.educationDetail = (e.area == null ? '' : e.area) + (e.studyType == null ? '' : e.studyType);
                 } else {
