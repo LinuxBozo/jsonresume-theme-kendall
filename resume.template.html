@@ -102,6 +102,22 @@
             {{/work}}
           </div>
           {{/workBool}}
+          {{#projectsBool}}
+          <!-- PROJECTS -->
+          <div class="box">
+            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
+            <ul class="list-group">
+              {{#projects}}
+              <li class="list-group-item">
+                <span style="font-weight:bold">{{name}}</span>: {{description}}
+                <div class="address">
+                  <a href="{{url}}" target="_blank">{{url}}</a>
+                </div>
+              </li>
+              {{/projects}}
+            </ul>
+          </div>
+          {{/projectsBool}}
         </div>
         <div class="col-xs-12 col-sm-5">
           <!-- CONTACT -->
@@ -203,22 +219,6 @@
             {{/skills}}
           </div>
           {{/skillsBool}}
-          {{#projectsBool}}
-          <!-- PROJECTS -->
-          <div class="box">
-            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
-            <ul class="list-group">
-              {{#projects}}
-              <li class="list-group-item">
-                <span style="font-weight:bold">{{name}}</span>: {{description}}
-                <div class="address">
-                  <a href="{{url}}" target="_blank">{{url}}</a>
-                </div>
-              </li>
-              {{/projects}}
-            </ul>
-          </div>
-          {{/projectsBool}}
           {{#volunteerBool}}
           <!-- VOLUNTEER -->
           <div class="box">
