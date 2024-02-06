@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-kendall-bushmanov",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A JSON Resume theme built with bootstrap",
   "main": "index.js",
   "scripts": {
