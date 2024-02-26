@@ -17,6 +17,9 @@
     <style type="text/css" media="print">
     {{{printcss}}}
     </style>
+    <style type="text/css">
+    {{{pdfcss}}}
+    </style>
     <!-- FAVICON -->
     <link rel="icon" href="{{photo}}" type="{{photoType}}">
   </head>
@@ -104,7 +107,8 @@
           {{/workBool}}
           {{#projectsBool}}
           <!-- PROJECTS -->
-          <div class="box">
+          <!-- TODO: roles -->
+          <div class="box page-break-avoid">
             <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
             <ul class="list-group">
               {{#projects}}
@@ -158,7 +162,7 @@
           </div>
           {{#educationBool}}
           <!-- EDUCATION -->
-          <div class="box">
+          <div class="box page-break-avoid">
             <h2><i class="fas fa-university ico"></i> Education</h2>
             <ul id="education" class="clearfix">
               {{#education}}
@@ -202,7 +206,7 @@
           {{/educationBool}}
           {{#skillsBool}}
           <!-- SKILLS -->
-          <div class="box">
+          <div class="box page-break-avoid">
             <h2><i class="fas fa-tasks ico"></i> Skills</h2>
             {{#skills}}
             <div class="skills clearfix">
@@ -303,7 +307,7 @@
           {{/publicationsBool}}
           {{#languagesBool}}
           <!-- LANGUAGES -->
-          <div class="box">
+          <div class="box page-break-avoid">
             <h2><i class="fas fa-language ico"></i> Languages</h2>
             <ul class="list-group">
               {{#languages}}

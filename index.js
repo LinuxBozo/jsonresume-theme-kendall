@@ -53,7 +53,7 @@ function render(resumeObject) {
 
     resumeObject.basics.capitalName = _.upperCase(resumeObject.basics.name);
     if(resumeObject.basics && resumeObject.basics.email) {
-        resumeObject.basics.gravatar = gravatar.url(resumeObject.basics.email, {
+        resumeObject.basics.gravatar = 'https:' + gravatar.url(resumeObject.basics.email, {
                         s: '200',
                         r: 'pg',
                         d: 'mm'
@@ -263,6 +263,7 @@ function render(resumeObject) {
 
     resumeObject.css = fs.readFileSync(__dirname + "/style.css", "utf-8");
     resumeObject.printcss = fs.readFileSync(__dirname + "/print.css", "utf-8");
+    resumeObject.pdfcss = fs.readFileSync(__dirname + "/pdf.css", "utf-8");
     var theme = fs.readFileSync(__dirname + '/resume.template.html', 'utf8');
     var resumeHTML = Mustache.render(theme, resumeObject);
 
