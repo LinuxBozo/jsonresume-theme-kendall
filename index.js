@@ -2,6 +2,11 @@ var fs = require('fs');
 var _ = require('lodash');
 var gravatar = require('gravatar');
 var Mustache = require('mustache');
+var formatDuration = require('date-fns/formatDuration');
+var differenceInMonths = require('date-fns/differenceInMonths');
+var startOfMonth = require('date-fns/startOfMonth');
+var endOfMonth = require('date-fns/endOfMonth');
+var addDays = require('date-fns/addDays');
 
 var d = new Date();
 var curyear = d.getFullYear();
@@ -35,11 +40,20 @@ function getMonth(startDateStr) {
     }
 }
 
+function getMimeType(url) {
+    global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    return require('check-url-type').get_type(url) ;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function render(resumeObject) {
 
-    resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
+    resumeObject.basics.capitalName = _.upperCase(resumeObject.basics.name);
     if(resumeObject.basics && resumeObject.basics.email) {
-        resumeObject.basics.gravatar = gravatar.url(resumeObject.basics.email, {
+        resumeObject.basics.gravatar = 'https:' + gravatar.url(resumeObject.basics.email, {
                         s: '200',
                         r: 'pg',
                         d: 'mm'
@@ -47,9 +61,13 @@ function render(resumeObject) {
     }
     if (resumeObject.basics.image || resumeObject.basics.gravatar) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
+        resumeObject.photoType = getMimeType(resumeObject.photo) ;
     }
 
     _.each(resumeObject.basics.profiles, function(p){
+        if(p.iconClass) {
+            return;
+        }
         switch(p.network.toLowerCase()) {
             // special cases
             case "google-plus":
@@ -103,52 +121,54 @@ function render(resumeObject) {
         }
     });
 
-    if (resumeObject.work && resumeObject.work.length) {
-        resumeObject.workBool = true;
-        _.each(resumeObject.work, function(w){
-            if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
-
-            }
-            if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
-            } else {
-                w.endDateYear = 'Present'
-            }
-            if (w.highlights) {
-                if (w.highlights[0]) {
-                    if (w.highlights[0] != "") {
-                        w.boolHighlights = true;
+    function handleWorkplace(w) {
+        const { startDate, endDate } = w;
+        if (startDate) {
+            w.startDateYear = (startDate || "").substr(0,4);
+            w.startDateMonth = getMonth(startDate || "");
+        }
+        if(endDate) {
+            w.endDateYear = (endDate || "").substr(0,4);
+            w.endDateMonth = getMonth(endDate || "");
+        } else {
+            w.endDateYear = 'Present'
+        }
+        function handleStringArray(obj, fieldName) {
+            if (obj[fieldName]) {
+                if (obj[fieldName][0]) {
+                    if (obj[fieldName][0] != "") {
+                        obj['bool' + capitalizeFirstLetter(fieldName)] = true;
                     }
                 }
             }
-        });
+        }
+        handleStringArray(w, 'highlights');
+        handleStringArray(w, 'keywords');
+        if (startDate) {
+          const months = differenceInMonths(
+            addDays(endOfMonth(new Date(endDate)), 1),
+            startOfMonth(new Date(startDate))
+          );
+          w.workExperience = formatDuration(
+            {
+              years: Math.floor(months / 12),
+              months: months % 12,
+            },
+            {
+              format: ["years", "months"],
+            }
+          );
+        }
+    }
+
+    if (resumeObject.work && resumeObject.work.length) {
+        resumeObject.workBool = true;
+        _.each(resumeObject.work, handleWorkplace);
     }
 
     if (resumeObject.volunteer && resumeObject.volunteer.length) {
         resumeObject.volunteerBool = true;
-        _.each(resumeObject.volunteer, function(w){
-            if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
-
-            }
-            if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
-            } else {
-                w.endDateYear = 'Present'
-            }
-            if (w.highlights) {
-                if (w.highlights[0]) {
-                    if (w.highlights[0] != "") {
-                        w.boolHighlights = true;
-                    }
-                }
-            }
-        });
+        _.each(resumeObject.volunteer, handleWorkplace);
     }
 
     if (resumeObject.projects && resumeObject.projects.length) {
@@ -161,6 +181,7 @@ function render(resumeObject) {
         if (resumeObject.education[0].institution) {
             resumeObject.educationBool = true;
             _.each(resumeObject.education, function(e){
+                handleWorkplace(e);
                 if( !e.area || !e.studyType ){
                   e.educationDetail = (e.area == null ? '' : e.area) + (e.studyType == null ? '' : e.studyType);
                 } else {
@@ -242,7 +263,8 @@ function render(resumeObject) {
 
     resumeObject.css = fs.readFileSync(__dirname + "/style.css", "utf-8");
     resumeObject.printcss = fs.readFileSync(__dirname + "/print.css", "utf-8");
-    var theme = fs.readFileSync(__dirname + '/resume.template', 'utf8');
+    resumeObject.pdfcss = fs.readFileSync(__dirname + "/pdf.css", "utf-8");
+    var theme = fs.readFileSync(__dirname + '/resume.template.html', 'utf8');
     var resumeHTML = Mustache.render(theme, resumeObject);
 
 

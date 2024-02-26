@@ -1,0 +1,16 @@
+@page {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+@page :first {
+    margin-top: 0px;
+}
+
+.page-break-avoid,
+.job,
+.list-group,
+.contact-item {
+    break-inside: avoid
+}

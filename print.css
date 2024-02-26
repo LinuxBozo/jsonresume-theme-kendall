@@ -1,5 +1,6 @@
 body {
-  font-size: .95em;
+  font-family: Calibri, Arial, sans-serif;
+  /* font-size: .95em; */
   -webkit-print-color-adjust: exact;
 }
 
@@ -55,6 +56,14 @@ blockquote,
 .job .details {
   border: 1px solid #eee;
 }
+
+#awards .year{
+  width: 25%;
+}
+#awards .description{
+  width: 75%;
+}
+
 .publication,
 .publication .panel-heading,
 .publication .name{
@@ -89,3 +98,8 @@ blockquote,
   border-width: 4px;
   pointer-events: none;
  }
+
+.address {
+  white-space: normal;
+  word-break: break-all;
+}
